@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-xs-3">
+        <button ng-click="newGame()" class="btn btn-success">New Game</button>
+    </div>
+    <div class="col-xs-9">
+        <form role="form">
+            <div class="form-group">
+                <select class="form-control player" ng-model="player" ng-options="p.name for p in players" ng-change="setPlayer()"></select>
+                <div class="player-label">starts game first</div>
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<p class="bg-info" ng-show="show_msg && message">{{'{{'}}message{{'}}'}}</p><br>
+<div class="board">
+    <div ng-repeat="row in rows" class="row">
+        <div id="{{'{{'}}cell.id{{'}}'}}" ng-repeat="cell in row" class="cell">
+            <div ng-click="makeMove(cell)" class="content{{'{{'}}cell.mark{{'}}'}}"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+    var gameId = "{{game_id}}";
+</script>
+<script src="/app/static/lib/socket.io.js" type="text/javascript"></script>
+<script src="/app/static/lib/angular.js" type="text/javascript"></script>
+<script src="/app/static/lib/angular_socket_io.js" type="text/javascript"></script>
+<script src="/app/static/js/game.js" type="text/javascript"></script>
+{% endblock %}

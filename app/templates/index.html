@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<button ng-click="newGame()" class="btn btn-success">New Game</button>
+<br><br>
+<h4>Games History</h4>
+<div class="row">
+    <div class="col-md-12">
+<table class="table table-striped">
+    <thead>
+        <th>Game</th>
+        <th>Created</th>
+        <th>Winner</th>
+    </thead>
+    <tbody>
+        {% for game in games %}
+        <tr>
+            <td>
+                <a href="{{ url_for('game', game_id=game.game_id) }}">
+                    {{ game.game_id }}
+                </a>
+            </td>
+            <td>{{ game.created_label }}</td>
+            <td>{{ game.status }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/app/static/lib/angular.js" type="text/javascript"></script>
+<script src="/app/static/lib/angular_socket_io.js" type="text/javascript"></script>
+<script src="/app/static/js/index.js" type="text/javascript"></script>
+{% endblock %}

@@ -1,0 +1,73 @@
+
+
+body .container {
+    max-width: 600px;
+}
+
+.board {
+    width: 400px;
+    margin-left: 15px;
+}
+.row {
+    display: block;
+    overflow: hidden;
+}
+.cell {
+    width: 33.3%;
+    padding-bottom: 33.3%;
+    border: 1px;
+    background: black;
+    color: #FFF;
+    position: relative;
+    float: left;
+}
+.content,
+.contentX,
+.contentO {
+    position: absolute;
+    left: 1px;
+    right: 0px;
+    top: 1px;
+    bottom: 0px;
+    padding: 10px;
+}
+.row .cell:last-of-type .content,
+.row .cell:last-of-type .contentX,
+.row .cell:last-of-type .contentO {
+    right: 1px;
+}
+.row:last-of-type .content,
+.row:last-of-type .contentX,
+.row:last-of-type .contentO {
+    bottom: 1px;
+}
+
+.content {
+    background: #ffffff;
+}
+.contentX,
+.contentO {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contentX {
+    background-image: url("../img/x.jpg");
+}
+.contentO {
+    background-image: url("../img/o.jpg");
+}
+
+select.player {
+    width: 100px;
+    float: left;
+    margin-right: 10px;
+}
+.player-label {
+    padding: 5px;
+}
+
+p.bg-info {
+    padding: 10px 15px;
+    font-weight: bold;
+}

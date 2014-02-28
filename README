@@ -1,0 +1,22 @@
+Tic Tac Toe
+===========
+
+Author
+------
+    Alexander Dementsov, dexity@gmail.com
+
+Technology
+----------
+* Flask
+* SocketIO
+* AngularJS
+* Redis
+
+
+Usage
+-----
+
+    $ pip install -r requirements.txt
+    $ nohup redis-server &
+    $ python tests.py
+    $ python server.py

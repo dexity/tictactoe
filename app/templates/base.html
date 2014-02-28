@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="t3App">
+    <head>
+        <title>
+            {% block title %}Tic Tac Toe{% endblock %}
+        </title>
+        <link href="/app/static/lib/bootstrap.min.css" rel="stylesheet" type=text/css>
+        <link href="/app/static/css/game.css" rel="stylesheet" type=text/css>
+    </head>
+    <body ng-controller="t3Ctrl">
+        <div class="container">
+        <h3><a href="/">Tic Tac Toe</a></h3>
+        {% block content %}{% endblock %}
+        {% block scripts %}{% endblock %}
+        </div>
+    </body>
+</html>
